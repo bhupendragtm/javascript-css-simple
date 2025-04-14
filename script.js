@@ -1,14 +1,21 @@
 let clickCount = 0; const clickLimit = 10;
 document.getElementById("clickBtn").addEventListener("click", function () {
     const message = document.getElementById("message");
-    message.textContent = "You clicked the button! 🎉";
+    // message.textContent = "1You clicked the button! 🎉";
   });
   
   // Disable right-click
-// document.addEventListener("contextmenu", function (e) {
-//     e.preventDefault();
-//     console.log("Trying to copy text");
-//   });
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    console.log("You Are clicking right!");
+  });
+
+  //Disable left click
+  document.getElementById("myParagraph").addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("You Cannot left click in Paragraph!")
+  })
   
   // Disable keyboard shortcuts for copy, cut, paste
   document.addEventListener("keydown", function (e) {

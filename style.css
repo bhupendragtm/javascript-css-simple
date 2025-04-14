@@ -12,7 +12,9 @@ body {
     color: white;
     padding: 2rem 1rem;
   }
-  
+  p {
+    pointer-events: none;
+  }
   main {
     margin: 2rem auto;
     max-width: 600px;
@@ -39,7 +41,9 @@ body {
   }
   
   body {
-    -moz-user-select: none;    /* Firefox */
-    user-select: none;         /* Standard */
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none;    /* Firefox */
+      -ms-user-select: none;     /* IE10+/Edge */
+      user-select: none;         /* Standard */
   }
   
