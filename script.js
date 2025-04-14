@@ -25,8 +25,8 @@ document.getElementById("clickBtn").addEventListener("click", function () {
   });
   
   document.getElementById("clickBtn").addEventListener("click", function () {
-    if (clickCount >= clickLimit) {
-        document.getElementById("message").textContent = "You've reached the click limit times to click button!";
+    if (clickCount >= clickLimit+5) {
+        document.getElementById("message").textContent = "Maximum times clicked!";
         return;
     } 
     clickCount++;
@@ -36,10 +36,22 @@ document.getElementById("clickBtn").addEventListener("click", function () {
     if (clickCount === 1) {
         message.textContent = `You clicked the button! 🎉`;
       } else {
-        message.textContent = `You clicked the button ${clickCount} times! 🎉`;
+        message.textContent = `You clicked the button ${clickCount-1} more times! 🎉`;
       }
 
-      if (clickCount >= clickLimit) {
-        message.textContent = " You've reached the click limit times to click button!";
+      if (clickCount >= clickLimit+2) {
+        message.textContent = "You've reached the click limit times to click button!";
+      }
+
+      if (clickCount >= clickLimit+3) {
+        message.textContent = "You've reached the click limit times to click button!, Message is set for two more steps";
+      }
+
+      if (clickCount >= clickLimit+4) {
+        message.textContent = "You've reached the click limit times to click button!, If you click one more count will stopped! ";
+      }
+
+      if (clickCount >= clickLimit+5) {
+        message.textContent = "OK! Count is Stopping...";
       }
   });
